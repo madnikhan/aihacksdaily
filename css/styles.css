@@ -33,6 +33,13 @@ header .logo a {
     font-weight: bold;
 }
 
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 /* Main Menu */
 nav ul.main-menu {
     list-style: none;
@@ -195,4 +202,49 @@ footer ul li a {
 
 footer ul li a:hover {
     color: #f4dfcd; /* Warm beige on hover */
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    /* Show Hamburger Menu */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide Main Menu by Default */
+    nav ul.main-menu {
+        display: none;
+        flex-direction: column;
+        background: #ffffff;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    /* Show Main Menu When Active */
+    nav ul.main-menu.active {
+        display: flex;
+    }
+
+    nav ul.main-menu li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* Submenu Adjustments */
+    nav ul.submenu {
+        position: static;
+        box-shadow: none;
+        padding: 0;
+        display: none; /* Hide submenus by default */
+    }
+
+    /* Show Submenus When Parent Item is Active */
+    nav ul.main-menu li.menu-item.active > ul.submenu {
+        display: block;
+    }
 }
