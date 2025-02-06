@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyProductiveTools - Free Online Tools</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
@@ -12,6 +12,10 @@
         <div class="container">
             <div class="logo">
                 <a href="/">MyProductiveTools</a>
+            </div>
+            <!-- Hamburger Icon for Mobile -->
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
             </div>
             <nav id="main-nav">
                 <ul class="main-menu">
@@ -127,13 +131,15 @@
 
     <!-- JavaScript for Toggle Menu -->
     <script>
-        // Toggle Hamburger Menu
-        const menuToggle = document.getElementById('menu-toggle');
-        const mainNav = document.getElementById('main-nav');
-
-        menuToggle.addEventListener('click', () => {
+        // Function to toggle the menu
+        function toggleMenu() {
+            const mainNav = document.getElementById('main-nav');
             mainNav.classList.toggle('active');
-        });
+        }
+
+        // Attach the function to the hamburger menu click event
+        const menuToggle = document.getElementById('menu-toggle');
+        menuToggle.onclick = toggleMenu;
     </script>
 </body>
 </html>
